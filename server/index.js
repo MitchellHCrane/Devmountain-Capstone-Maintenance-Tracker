@@ -14,17 +14,17 @@ app.use(
 
 app.use(cors());
 
-// simple route. Node and Express server as an API, so that it can give our React app data
-app.get("/", (req, res) => {
-  res.json({ message: "Hello from server!" });
-});
-
 //API's
+app.get("/users/:id", db.getUser);
+app.get("/garages/:users_id", db.getGarages);
+app.get("/garage/:garage_id", db.getGarage);
+app.get("/records/:garage_id", db.getRecord);
+app.post("/auth/login", db.loginUser);
 app.post("/users", db.createUser);
-app.post("/garage", db.createGarage);
-app.post("/record", db.createRecord);
-app.delete("/garage/:id", db.deleteGarage);
-app.delete("/record/:id", db.deleteRecord);
+app.post("/garages/:users_id", db.createGarage);
+app.post("/garage/:garage_id", db.createRecord);
+app.delete("/garage/:garage_id", db.deleteGarage);
+app.delete("/records/:record_id", db.deleteRecord);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 5001;

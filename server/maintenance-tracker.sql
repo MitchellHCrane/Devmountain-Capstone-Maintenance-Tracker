@@ -8,7 +8,11 @@ CREATE TABLE garage (
     id SERIAL PRIMARY KEY,
     users_id INT NOT NULL,
     garage_image VARCHAR(500),
-    vehicle_name VARCHAR(50)
+    vehicle_name VARCHAR(50),
+    CONSTRAINT fk_users
+        FOREIGN KEY(users_id)
+            REFERENCES users(id)
+            ON DELETE CASCADE
 );
 
 CREATE TABLE record (
@@ -16,12 +20,8 @@ CREATE TABLE record (
     garage_id INT NOT NULL,
     record_date date,
     mileage INT,
-    service_note VARCHAR(500)
+    service_note VARCHAR(500),
+    CONSTRAINT fk_garage
+        FOREIGN KEY(garage_id)
+            REFERENCES garage(id)
 );
-
-ALTER TABLE "garage" ADD CONSTRAINT "garage_fk0" FOREIGN KEY ("users_id") REFERENCES "users"("id");
-ALTER TABLE "record" ADD CONSTRAINT "garage_fk0" FOREIGN KEY ("garage_id") REFERENCES "garage"("id");
-
-
--- then go to postgres in command and enter it in
--- 
