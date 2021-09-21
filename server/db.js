@@ -11,9 +11,6 @@ const pool = new Pool({
 
 pool.connect();
 
-
-
-
 // CREATE New user Done
 const createUser = (req, res) => {
   const { users_name, users_password } = req.body;
@@ -28,8 +25,6 @@ const createUser = (req, res) => {
     }
   );
 };
-
-
 
 //CREATE New Garage item
 const createGarage = (req, res) => {
@@ -47,8 +42,6 @@ const createGarage = (req, res) => {
     }
   );
 };
-
-
 
 //CREATE New maintenance record
 const createRecord = (req, res) => {
@@ -68,8 +61,6 @@ const createRecord = (req, res) => {
   );
 };
 
-
-
 //DELETE garage item
 const deleteGarage = (req, res) => {
   const garage_id = parseInt(req.params.garage_id);
@@ -85,8 +76,6 @@ const deleteGarage = (req, res) => {
     }
   );
 };
-
-
 
 //DELETE garage item
 const deleteRecord = (req, res) => {
@@ -104,8 +93,6 @@ const deleteRecord = (req, res) => {
   );
 };
 
-
-
 //Get User
 const getUser = (req, res) => {
   const id = parseInt(req.params.id);
@@ -119,7 +106,6 @@ const getUser = (req, res) => {
 };
 
 //Get Garages
-
 const getGarages = (req, res) => {
   const id = parseInt(req.params.users_id);
 
@@ -135,8 +121,6 @@ const getGarages = (req, res) => {
   );
 };
 
-
-
 // Get Garage
 const getGarage = (req, res) => {
   const id = parseInt(req.params.garage_id);
@@ -148,8 +132,6 @@ const getGarage = (req, res) => {
     res.json(results.rows[0]);
   });
 };
-
-
 
 // Get Record
 const getRecord = (req, res) => {
@@ -167,8 +149,6 @@ const getRecord = (req, res) => {
   );
 };
 
-
-
 // Login user
 const loginUser = (req, res) => {
   const { users_name, users_password } = req.body;
@@ -183,8 +163,6 @@ const loginUser = (req, res) => {
     }
   );
 };
-
-
 
 //to index.js
 module.exports = {
