@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const db = require("./db");
+// test line 6
+// const path = require('path');
 
 const app = express();
 
@@ -13,6 +15,13 @@ app.use(
 );
 
 app.use(cors());
+
+// test 17-21
+// app.use(express.static("public"));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "public", "index.html"));
+// });
+
 
 //API's
 app.get("/users/:id", db.getUser);
