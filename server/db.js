@@ -94,21 +94,20 @@ const deleteRecord = (req, res) => {
 };
 
 //Get User
-const getUser = (req, res) => {
-  const id = parseInt(req.params.id);
+// const getUser = (req, res) => {
+//   const id = parseInt(req.params.id);
 
-  pool.query("SELECT * FROM users WHERE id = $1", [id], (error, results) => {
-    if (error) {
-      throw error;
-    }
-    res.json(results.rows);
-  });
-};
+//   pool.query("SELECT * FROM users WHERE id = $1", [id], (error, results) => {
+//     if (error) {
+//       throw error;
+//     }
+//     res.json(results.rows);
+//   });
+// };
 
 //Get Garages
 const getGarages = (req, res) => {
   const id = parseInt(req.params.users_id);
-
   pool.query(
     "SELECT * FROM garage WHERE users_id = $1 ORDER BY vehicle_name",
     [id],
@@ -167,7 +166,7 @@ const loginUser = (req, res) => {
 //to index.js
 module.exports = {
   loginUser,
-  getUser,
+  // getUser,
   getGarages,
   getGarage,
   getRecord,

@@ -16,13 +16,10 @@ app.use(
 
 app.use(cors());
 
-app.get('*', (req, res) => { //Its essentially a catchall. 
-  res.sendFile(path.join(__dirname, '../client/public/index.html'))
-})
 
 
 //API's
-app.get("/users/:id", db.getUser);
+// app.get("/users/:id", db.getUser);
 app.get("/garages/:users_id", db.getGarages);
 app.get("/garage/:garage_id", db.getGarage);
 app.get("/records/:garage_id", db.getRecord);
@@ -32,6 +29,9 @@ app.post("/garages/:users_id", db.createGarage);
 app.post("/garage/:garage_id", db.createRecord);
 app.delete("/garage/:garage_id", db.deleteGarage);
 app.delete("/records/:record_id", db.deleteRecord);
+app.get('*', (req, res) => { 
+  res.sendFile(path.join(__dirname, '../client/public/index.html'))
+})
 
 // set port, listen for requests
 const PORT = process.env.PORT || 5001;
