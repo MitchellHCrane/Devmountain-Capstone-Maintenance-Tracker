@@ -29,8 +29,18 @@ app.post("/garages/:users_id", db.createGarage);
 app.post("/garage/:garage_id", db.createRecord);
 app.delete("/garage/:garage_id", db.deleteGarage);
 app.delete("/records/:record_id", db.deleteRecord);
-app.get('*', (req, res) => { 
-  res.sendFile(path.join(__dirname, '../client/public/index.html'))
+// app.get('*', (req, res) => { 
+//   res.sendFile(path.join(__dirname, '../client/public/index.html'))
+// })
+
+app.use(express.static(path.join(__dirname, '../client/public')))
+
+app.get('*', function(_, res) {
+  res.sendFile(path.join(__dirname, '.../client/public/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
 })
 
 // set port, listen for requests
