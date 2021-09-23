@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const db = require("./db");
 // test line 6
-const path = require('path');
+const path = require("path");
 
 const app = express();
 
@@ -16,8 +16,6 @@ app.use(
 
 app.use(cors());
 
-
-
 //API's
 // app.get("/users/:id", db.getUser);
 app.get("/garages/:users_id", db.getGarages);
@@ -29,19 +27,20 @@ app.post("/garages/:users_id", db.createGarage);
 app.post("/garage/:garage_id", db.createRecord);
 app.delete("/garage/:garage_id", db.deleteGarage);
 app.delete("/records/:record_id", db.deleteRecord);
-// app.get('*', (req, res) => { 
+// app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../client/public/index.html'))
 // })
 
-app.use(express.static(path.join(__dirname, '../client/public')))
+app.use(express.static(path.join(__dirname, "../client/public")));
 
-app.get('*', function(_, res) {
-  res.sendFile(path.join(__dirname, '../client/public/index.html'), function(err) {
-    if (err) {
-      res.status(500).send(err)
-    }
-  })
-})
+app.get("*", function (_, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html")),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    };
+});
 
 // set port, listen for requests
 const PORT = process.env.PORT || 5001;
