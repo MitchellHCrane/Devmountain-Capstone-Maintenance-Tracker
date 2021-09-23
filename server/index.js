@@ -36,7 +36,7 @@ app.delete("/records/:record_id", db.deleteRecord);
 app.use(express.static(path.join(__dirname, '../client/public')))
 
 app.get('*', function(_, res) {
-  res.sendFile(path.join(__dirname, '.../client/public/index.html'), function(err) {
+  res.sendFile(path.join(__dirname, '../client/public/index.html'), function(err) {
     if (err) {
       res.status(500).send(err)
     }
