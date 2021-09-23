@@ -31,7 +31,7 @@ app.delete("/records/:record_id", db.deleteRecord);
 //   res.sendFile(path.join(__dirname, '../client/public/index.html'))
 // })
 
-app.use(express.static(path.join(__dirname, "../client/public")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("*", function (_, res) {
   res.sendFile(path.join(__dirname, "build", "index.html")),
