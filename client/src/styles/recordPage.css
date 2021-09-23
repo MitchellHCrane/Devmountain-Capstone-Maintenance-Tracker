@@ -1,0 +1,44 @@
+.recordH2 {
+  text-align: center;
+  padding: 24px 0;
+  }
+
+  .recordCard {
+    background-color: #28546be0;
+    width: 70%;
+    height: 225px;
+    border-style: solid;
+    border-color: #28536b;
+    border-radius: 8px;
+    border-width: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  
+  .recordImg > img {
+    height: 30vh;
+    width: 70vw;
+  
+    object-fit: cover;
+  }
+
+  .recordDiv {
+    background-color: #1c7c543a;
+    border-style: solid;
+    border-color: #1c7c54cb;
+    margin: 4px 8px;
+    border-radius: 8px;
+  }
+
+  .pRecord {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .pRecord > p {
+    margin: 0px 24px;
+  }
+
+

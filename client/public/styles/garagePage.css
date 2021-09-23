@@ -1,0 +1,45 @@
+.garageH2 {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.btn > .button {
+  max-width: 40%;
+}
+
+div.btn {
+  width: 100%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+}
+
+.garageCard {
+  background-color: #28546be0;
+  width: 70%;
+  height: 300px;
+  border-style: solid;
+  border-color: #28536b;
+  border-radius: 8px;
+  border-width: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.garageImg > img {
+  height: 42vh;
+  width: 70vw;
+
+  object-fit: cover;
+}
+
+.vNameDiv > h3 {
+  padding-top: 8px;
+  color: #FFF;
+}

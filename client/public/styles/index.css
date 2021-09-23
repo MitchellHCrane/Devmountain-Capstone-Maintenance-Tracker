@@ -1,0 +1,119 @@
+@import "./garagePage.css";
+@import "./loginPage.css";
+@import "./recordPage.css";
+@import "./navigation.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
+/* Global Styles */
+
+body {
+  font-family: "Roboto ", sans-serif;
+}
+
+.backOrSignOut {
+  display: inline;
+}
+
+.back {
+  float: left;
+}
+
+.signOutDiv {
+  text-align: right;
+  margin: 16px 24px;
+}
+
+h1 {
+  font-family: "Roboto ", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 40px;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Roboto ", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 32px;
+  text-align: center;
+  padding: 0 24px;
+}
+
+h3 {
+  font-family: "Roboto ", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 24px;
+  text-align: center;
+  padding: 0 24px;
+  color: #000;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* button */
+
+button {
+  width: 50%;
+  max-width: 50%;
+  background-color: #1c7c54;
+  color: white;
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 16px auto;
+  cursor: pointer;
+}
+
+#navBtn {
+  background-color: rgb(142, 142, 142);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1c7c54c6;
+}
+
+.submitDiv {
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  /* Styles for Desktop 600px wide + */
+  div.btn {
+    max-width: 40vw;
+  }
+  /* Styles for Record Page */
+  .recordImg > img {
+    height: 42vh;
+    max-height: 43vh;
+    width: 50vw;
+
+    object-fit: cover;
+  }
+  .recordCard {
+    background-color: #28546be0;
+    width: 50vw;
+    height: 250px;
+    border-style: solid;
+    border-color: #28536b;
+    border-radius: 8px;
+    border-width: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .recordDiv {
+    background-color: #1c7c543a;
+    border-style: solid;
+    border-color: #1c7c54cb;
+    margin: 16px auto;
+    border-radius: 8px;
+    width: 75vw;
+  }
+}
